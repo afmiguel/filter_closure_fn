@@ -14,7 +14,6 @@
 //        b. `f: T` (onde `T` é um tipo genérico que representa uma closure)
 //    - Restrição de Trait (Trait Bound) para `T`:
 //        A closure `f` deve aceitar um `i32` como argumento e retornar um `bool`.
-//        Isso é expresso como: `where T: Fn(i32) -> bool`
 //    - Corpo da função:
 //        - Crie um novo vetor vazio `result: Vec<i32>`.
 //        - Itere sobre cada elemento `i` no vetor de entrada `v`.
@@ -27,11 +26,11 @@
 //    - Comente ou remova as chamadas existentes para `odd_filter` e `even_filter`.
 //    - Chame a nova função `filter` duas vezes:
 //        a. Para filtrar números ÍMPARES:
-//           - Passe o vetor `v` e uma closure que implemente a lógica `|x| x % 2 != 0`.
+//           - Passe o vetor `v` e uma closure que implemente a lógica adequada (retorna true se o valor for ímpar).
 //           - O resultado esperado é: `[1, 3, 5, 7, 9]`
 //           - Imprima o resultado com: `println!("Odd numbers = {:?}", result);`
 //        b. Para filtrar números PARES:
-//           - Passe o vetor `v` e uma closure que implemente a lógica `|x| x % 2 == 0`.
+//           - Passe o vetor `v` e uma closure que implemente a lógica adequada (retorna true se o valor for par).
 //           - O resultado esperado é: `[2, 4, 6, 8, 10]`
 //           - Imprima o resultado com: `println!("Even numbers = {:?}", result);`
 
@@ -39,12 +38,6 @@
 //    - Após confirmar que sua nova função `filter` e as chamadas em `main` estão funcionando
 //      corretamente e produzindo os outputs esperados, você pode remover as definições
 //      originais das funções `odd_filter` e `even_filter`.
-
-// OBSERVAÇÃO SOBRE O CÓDIGO INICIAL:
-// Note que os comentários de `Output` no código inicial fornecido abaixo podem não
-// refletir o comportamento completo das funções `odd_filter` e `even_filter` para o vetor `v` dado.
-// Foque em fazer a sua função `filter` produzir os resultados corretos e completos
-// ([1, 3, 5, 7, 9] para ímpares e [2, 4, 6, 8, 10] para pares) conforme descrito nos passos acima.
 
 fn odd_filter(v: &Vec<i32>) -> Vec<i32> {
     let mut result: Vec<i32> = Vec::new();
